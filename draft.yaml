@@ -31,4 +31,6 @@ models:
 seeders: Project, ContactInfo
 
 controllers:
-# ...
+  employee:
+    test:
+      query: where:salary where:name order:bonus limit:3
