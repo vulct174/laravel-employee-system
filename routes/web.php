@@ -20,3 +20,12 @@ Route::get('/', function () {
 Route::get('employees/test', [App\Http\Controllers\employeeController::class, 'test']);
 
 Route::get('employees/test', [App\Http\Controllers\employeeController::class, 'test']);
+
+
+Route::get('employees/test', [App\Http\Controllers\employeeController::class, 'test']);
+Route::get('employees/find', [App\Http\Controllers\employeeController::class, 'find']);
+
+
+Route::get('employees/test', [App\Http\Controllers\employeeController::class, 'test']);
+Route::get('employees/find', [App\Http\Controllers\employeeController::class, 'find']);
+Route::get('employees/event', [App\Http\Controllers\employeeController::class, 'event']);

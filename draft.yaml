@@ -34,3 +34,9 @@ controllers:
   employee:
     test:
       query: where:salary where:name order:bonus limit:3
+    find:
+      find: id
+      dispatch: ComputeSalary with:employee
+    event:
+      find: id
+      fire: FancyEvent with:employee
