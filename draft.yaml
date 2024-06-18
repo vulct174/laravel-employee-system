@@ -38,5 +38,7 @@ controllers:
       find: id
       dispatch: ComputeSalary with:employee
     event:
-      find: id
+      find: project.id
       fire: FancyEvent with:employee
+      flash: employee.name
+      notify: employee checkDetails with:project
