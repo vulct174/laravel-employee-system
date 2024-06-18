@@ -64,4 +64,24 @@ final class employeeControllerTest extends TestCase
             return $notification->project->is($project);
         });
     }
+
+
+    #[Test]
+    public function redirect_redirects(): void
+    {
+        $employee = Employee::factory()->create();
+
+        $response = $this->get(route('employees.redirect'));
+
+        $response->assertRedirect(route('employee.show', [$employee.id]));
+    }
+
+
+    #[Test]
+    public function showEmployee_behaves_as_expected(): void
+    {
+        $employee = Employee::factory()->create();
+
+        $response = $this->get(route('employees.showEmployee'));
+    }
 }

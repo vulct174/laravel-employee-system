@@ -42,3 +42,8 @@ controllers:
       fire: FancyEvent with:employee
       flash: employee.name
       notify: employee checkDetails with:project
+    redirect:
+      find: employee.id
+      redirect: employee.show with employee.id
+    showEmployee:
+      find: employee.id

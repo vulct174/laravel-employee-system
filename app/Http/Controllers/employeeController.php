@@ -6,7 +6,7 @@ use App\Events\FancyEvent;
 use App\Jobs\ComputeSalary;
 use App\Models\Employee;
 use App\Models\Project;
-use App\Notification\checkDetails;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
@@ -26,11 +26,27 @@ class employeeController extends Controller
 
     public function event(Request $request): Response
     {
-        $id = $request->input('id');
         $project = Project::find($id);
-        $employee = Employee::find(5);
+
         FancyEvent::dispatch($employee);
+
         $request->session()->flash('employee.name', $employee->name);
+
         $employee->notify(new checkDetails($project));
+    }
+
+    public function redirect(Request $request): RedirectResponse
+    {
+        $id = $request->id;
+        $employee = Employee::find($id);
+
+        return redirect()->route('employee.show', ['id' => $employee->id]);
+    }
+
+    public function showEmployee(Request $request): \Illuminate\Http\JsonResponse
+    {
+        $id = $request->id;
+        $employee = Employee::find($id);
+        return response()->json($employee);
     }
 }

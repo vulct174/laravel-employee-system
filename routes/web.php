@@ -18,34 +18,7 @@ Route::get('/', function () {
 });
 
 Route::get('employees/test', [App\Http\Controllers\employeeController::class, 'test']);
-
-Route::get('employees/test', [App\Http\Controllers\employeeController::class, 'test']);
-
-
-Route::get('employees/test', [App\Http\Controllers\employeeController::class, 'test']);
-Route::get('employees/find', [App\Http\Controllers\employeeController::class, 'find']);
-
-
-Route::get('employees/test', [App\Http\Controllers\employeeController::class, 'test']);
 Route::get('employees/find', [App\Http\Controllers\employeeController::class, 'find']);
 Route::get('employees/event', [App\Http\Controllers\employeeController::class, 'event']);
-
-
-Route::get('employees/test', [App\Http\Controllers\employeeController::class, 'test']);
-Route::get('employees/find', [App\Http\Controllers\employeeController::class, 'find']);
-Route::get('employees/event', [App\Http\Controllers\employeeController::class, 'event']);
-
-
-Route::get('employees/test', [App\Http\Controllers\employeeController::class, 'test']);
-Route::get('employees/find', [App\Http\Controllers\employeeController::class, 'find']);
-Route::get('employees/event', [App\Http\Controllers\employeeController::class, 'event']);
-
-
-Route::get('employees/test', [App\Http\Controllers\employeeController::class, 'test']);
-Route::get('employees/find', [App\Http\Controllers\employeeController::class, 'find']);
-Route::get('employees/event', [App\Http\Controllers\employeeController::class, 'event']);
-
-
-Route::get('employees/test', [App\Http\Controllers\employeeController::class, 'test']);
-Route::get('employees/find', [App\Http\Controllers\employeeController::class, 'find']);
-Route::get('employees/event', [App\Http\Controllers\employeeController::class, 'event']);
+Route::get('employees/redirect', [App\Http\Controllers\employeeController::class, 'redirect']);
+Route::get('employees/show-employee', [App\Http\Controllers\employeeController::class, 'showEmployee'])->name('employee.show');
